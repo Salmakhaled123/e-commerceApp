@@ -1,0 +1,12 @@
+import 'package:dio/dio.dart';
+
+class ApiService{
+  final String _baseUrl='https://dummyjson.com/products';
+  final  Dio  _dio;
+  ApiService(this._dio);
+ Future  get({required String endPoint})async
+  {
+    var response=await _dio.get('$_baseUrl$endPoint');
+    return response.data;
+  }
+}
