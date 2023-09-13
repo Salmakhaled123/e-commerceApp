@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopyapp/features/home/data/product_model.dart';
+import 'package:shopyapp/features/home/presentation/view_model/home_cubit.dart';
 class PriceSection extends StatefulWidget {
   const PriceSection({Key? key, required this.model}) : super(key: key);
 final ProductItemModel model;
@@ -24,8 +26,9 @@ class _PriceSectionState extends State<PriceSection> {
               ),
               TextSpan(
                 text: ' ${widget.model.price} \$',
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 22,color: Colors.black),
+                style:  TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 22,color:BlocProvider.of<HomeCubit>(context).isDark?
+             Colors.white  : Colors.black),
               ),
             ])),
         const Spacer(),

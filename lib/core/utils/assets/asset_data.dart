@@ -10,7 +10,7 @@ class AssetData{
   static const searchEngine='assets/images/search.png';
   static const login='assets/images/login.png';
   static const register='assets/images/register.png';
-
+  static const fav='assets/images/fav.jpg';
 
 
 

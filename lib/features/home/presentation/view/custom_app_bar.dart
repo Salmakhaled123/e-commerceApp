@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopyapp/core/utils/app_router.dart';
+import 'package:shopyapp/features/home/presentation/view_model/home_cubit.dart';
 import 'package:shopyapp/features/search/presentation/view_model/search_cubit.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -13,7 +14,9 @@ class CustomAppBar extends StatelessWidget {
     return  Row(
       children: [
         IconButton(
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<HomeCubit>(context).changeTheme();
+            },
             icon: const Icon(
               Icons.dark_mode_outlined,
             )),

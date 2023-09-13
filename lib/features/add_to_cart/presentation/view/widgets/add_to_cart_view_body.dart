@@ -53,7 +53,7 @@ class AddToCartViewBody extends StatelessWidget {
                               Image.asset(AssetData.addToCart,
                                 width: 150,height: 150,));
                         });
-                  }, child:const  Text('Buy now'))
+                  }, child: const Text('Buy now'))
 
                 ],
               ),

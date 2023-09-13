@@ -23,10 +23,11 @@ final double discountPercentage;
 final double rating;
 final int stock;
 final String category;
+bool isFav=false;
 
 
 ProductItemModel(
-    {required this.stock,required this.category,
+    {required this.stock,required this.category,isFav,
   required this.id,required this.description,required this.title,
   required this.thumbnail,required this.price,required this.rating,
    required this.images, required this.discountPercentage,});

@@ -45,23 +45,22 @@ class HomeViewBody extends StatelessWidget {
           BlocBuilder<HomeCubit, HomeState>(
             builder: (context, state)
             {
-              if (state is HomeSuccess)
-              {
-                return Expanded(
-                  child: GridView.builder(
-                      itemCount: state.products.length, physics: const BouncingScrollPhysics(),
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          ), itemBuilder: (context, index) {
-                    return  GestureDetector(onTap: (){
-                      BlocProvider.of<DetailsCubit>(context).fetchProductDetails(state.products[index].id);
-                      GoRouter.of(context).push(AppRouter.details,extra: state.products[index]);
-                    },
-                        child: ProductItem(model: state.products[index],));
-                  }),
-                );
-              }
-              return const Center(child: CircularProgressIndicator(),);
+              var cubit=BlocProvider.of<HomeCubit>(context);
+
+
+              return Expanded(
+                child: GridView.builder(
+                    itemCount: cubit.products.length, physics: const BouncingScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ), itemBuilder: (context, index) {
+                  return  GestureDetector(onTap: (){
+                    BlocProvider.of<DetailsCubit>(context).fetchProductDetails(cubit.products[index].id);
+                    GoRouter.of(context).push(AppRouter.details,extra: cubit.products[index]);
+                  },
+                      child: ProductItem(model: cubit.products[index],));
+                }),
+              );
             },
           )
         ],

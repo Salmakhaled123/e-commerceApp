@@ -15,3 +15,6 @@ class HomeFailure extends HomeState {
   HomeFailure(this.errorMessage);
 }
 class ChangedIndexSuccessfully extends HomeState{}
+class AddToFav extends HomeState{}
+class DeletedSuccessfully extends HomeState{}
+class ChangeTheme extends HomeState{}
