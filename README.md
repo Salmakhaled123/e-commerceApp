@@ -7,8 +7,11 @@
 🚀 add to cart 
 
 ## architechture used
-🔔 ## MVVM
+🔔  MVVM
 ## state managemenet
-🔔 ## cubit 
+🔔  cubit 
+## dependency injection 
+🔔 apply singleton pattern using get_it package
+
 # video demo
 https://drive.google.com/file/d/1bOA7MehO4xm4VdZupwDiUgHaGqOI-LlR/view?usp=sharing
